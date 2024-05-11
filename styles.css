@@ -1,0 +1,45 @@
+.body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Set background color to black */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+@keyframes moveNoise {
+    from {
+        background-position: 0px 0px; /* Initial position */
+    }
+    to {
+        background-position: 100px 100px; /* Final position */
+    }
+}
+
+.container {
+    width: 100%; /* Set container width to 100% */
+    height: 100%; /* Set container height to 100% */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.dot-grid {
+    width: 1280px; /* Set dot grid width */
+    height: 720px; /* Set dot grid height */
+    position: relative; /* Required for positioning dots */
+    -webkit-mask-image: url('noiseTexture.png'); /* Apply perlin noise as mask for Webkit browsers */
+    mask-image: url('noiseTexture.png'); /* Apply perlin noise as mask */
+}
+
+
+
+.dot {
+    position: absolute; /* Position dots absolutely within the grid */
+    width: 10px; /* Adjust dot size as needed */
+    height: 10px; /* Adjust dot size as needed */
+    background-color: rgba(255, 0, 0, 0); /* Set dot color to semi-transparent white */
+    z-index: 1; /* Ensure dots are above the background */
+    /* Additional styles for dot positioning */
+}
+
